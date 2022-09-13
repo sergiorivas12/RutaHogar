@@ -1,0 +1,270 @@
+body {
+    font-family:  'Comic Neue', cursive;
+    background-image: url(../img/bgnew_compress.jpg);
+}
+
+nav{
+    background-color: #753593 !important;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+nav ul li a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover{
+    color: #fea94c;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(../img/header_fondo_violeta-1.jpg);
+}
+
+main{
+    display: flex;
+    padding: 10px;
+    background-color: white;
+}
+
+main h2{
+    text-align: center;
+    background-color: white;
+}
+
+footer {
+    background-color: #5e0f82 !important;
+    color: white;
+    clear: both;
+    padding: 5px 0;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.activo{
+    color: #fea94c;
+}
+
+.holder{
+    max-width: 80%;
+    margin:0 auto;
+
+}
+
+.cajas{
+    max-height: 100px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.cajas p{
+    font-size: 15px;
+    color: #8b93a1;
+}
+
+.productos {
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.producto{
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.producto:hover{
+    border: 3px solid;
+    border-color: #753593;
+}
+
+.producto p{
+    font-size: 15px;
+    color: #4c5462;
+}
+
+.precio {
+    font-size: 25px!important;
+    color: #4c5462!important;
+    font-weight: bold;
+}
+
+.sociales {
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 5px;
+}
+.sociales h2{
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-size: 1em;
+    color: #3c424d;
+}
+
+.social ul {
+    display: flex;
+    list-style: none;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+#contactoBread {
+    display: flex;
+    justify-content: flex-end;
+    background-image: url(../img/contacto_bread.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    min-height: 200px;
+}
+
+.breadcrumbRutaHogar{
+
+}
+
+.breadcrumbRutaHogar ol li{
+    color: white!important;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.breadcrumbRutaHogar ol li a {
+    text-decoration: none;
+    text-transform: none;
+    color:white;
+}
+
+.breadcrumbRutaHogar ol li a:hover{
+    color:#753593;
+}
+
+.card:hover{
+    border: 1px solid;
+    border-color: #753593;
+}
+
+.imgMapa:hover{
+    border: 1px solid;
+    border-color: #753593;
+}
+
+.contactoRuta{
+    display: flex;
+}
+
+.contactoRuta ol{
+    padding-left: 1px !important;
+}
+
+.contactoRuta ol li{
+    list-style: none;
+}
+
+.contactoRuta ol li *{
+    color: #4c5462;
+    margin-right: 10px;
+}
+
+.contactoRuta ol li label{
+    font-family: Karla;
+}
+
+.mensajeContacto{
+    background-color: #f7be68;
+    color: white;
+}
+
+.mensajeContacto p{
+    font-size: 18px;
+}
+
+.quienesSomos{
+    text-align: left;
+}
+
+.quienesSomos:before {
+    position: absolute;
+    left: 660px;
+    top: 12.2em;
+    height: 2px;
+    width: 170px;
+    content: '';
+    background: #6FD9EC;
+}
+
+.nuevosContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.nuevos{
+    width: 80%;
+}
+
+.nuevos h2{
+    padding-left: 5px;
+    text-align: left;
+    font-size: 2.14em;
+    font-weight: bold;
+    color: #3c424d;
+}
+
+.productosNuevos {
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.productoNuevo{
+    width: 20%;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.productoNuevo:hover{
+    border: 3px solid;
+    border-color: #753593;
+}
+
+.productoNuevo p{
+    font-size: 15px;
+    color: #4c5462;
+}
+
+.productoNuevo img{
+    max-width: 100%;
+}
+
+.nuevosFaq{
+    width: 20%;
+}
+
+.nuevosFaq h2{
+    text-align: left;
+    font-size: 25px;
+}
+
+.nuevosFaq p{
+    overflow-wrap: break-word;
+}
