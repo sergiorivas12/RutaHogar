@@ -1,9 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
-import './styles/normalize.css';
-import './styles/styles.css';
-
 import Header   from './components/layout/Header';
 import Nav      from './components/layout/Nav';
 import Footer   from './components/layout/Footer';
@@ -21,7 +18,7 @@ function App() {
                 <BrowserRouter>
                     <Nav />
                     <Routes>
-                        <Route path="/index" element={<IndexPage />} />
+                        <Route path="/" element={<IndexPage />} />
                         <Route path="/productos" element={<ProductosPage />} />
                         <Route path="/nuevos" element={<NuevosPage />} />
                         <Route path="/contacto" element={<ContactoPage />} />

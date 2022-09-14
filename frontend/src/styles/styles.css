@@ -1,6 +1,6 @@
 body {
     font-family:  'Comic Neue', cursive;
-    /*background-image: url(../img/bgnew_compress.jpg);*/
+    background-image: url(../img/bgnew_compress.jpg);
 }
 
 nav{
@@ -27,7 +27,7 @@ header {
     display: flex;
     align-items: center;
     flex-direction: column;
-    /*background-image: url(../img/header_fondo_violeta-1.jpg);*/
+    background-image: url(../img/header_fondo_violeta-1.jpg);
 }
 
 main{
@@ -129,7 +129,7 @@ footer {
 #contactoBread {
     display: flex;
     justify-content: flex-end;
-    /*background-image: url(../img/contacto_bread.jpg);*/
+    background-image: url(../img/contacto_bread.jpg);
     background-position: center top;
     background-repeat: no-repeat;
     min-height: 200px;
