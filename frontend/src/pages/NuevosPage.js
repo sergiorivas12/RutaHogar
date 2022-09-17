@@ -9,7 +9,7 @@ const NuevosPage = (props) => {
                 <BreadCrumb nombre='Nuevos'/>
                 <Espacio height='10px'/>
                 <div className="nuevosContainer">
-                    <div class="nuevos">
+                    <div className="nuevos">
                         <h2><i className="fa fa-couch"></i> Productos Nuevos</h2>
                         <ProductosNuevos />
                     </div>

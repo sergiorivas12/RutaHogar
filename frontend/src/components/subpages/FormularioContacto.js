@@ -19,13 +19,13 @@ const FormularioContacto = (props) => {
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="form-group">
-                                    <label for="nombre">Nombre (*)</label>
+                                    <label htmlFor="nombre">Nombre (*)</label>
                                     <input className="form-control" id="nombre" placeholder="Nombre" />
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="form-group">
-                                    <label for="email">Email (*)</label>
+                                    <label htmlFor="email">Email (*)</label>
                                     <input type="email" className="form-control" id="email" placeholder="Ingrese Email" />
                                 </div>
                             </div>
@@ -34,7 +34,7 @@ const FormularioContacto = (props) => {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="form-group">
-                                    <label for="asunto">Asunto</label>
+                                    <label htmlFor="asunto">Asunto</label>
                                     <input className="form-control" id="asunto" placeholder="Asunto" />
                                 </div>
                             </div>
@@ -42,7 +42,7 @@ const FormularioContacto = (props) => {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="form-group">
-                                    <label for="asunto">Mensaje</label>
+                                    <label htmlFor="asunto">Mensaje</label>
                                     <textarea style={textAreaStyle} className='form-control' id="mensaje" placeholder="mensaje"></textarea>
                                 </div>
                             </div>
