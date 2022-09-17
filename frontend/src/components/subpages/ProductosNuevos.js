@@ -1,7 +1,10 @@
 import React from 'react';
 import Producto from '../layout/Producto';
+import { useState } from 'react';
 
 const ProductosNuevos = (props) => {
+    const [cantidad, setCantidad] = useState(0);
+
     let productos = [
         {
             "img": "img/nueva1.jpg",
@@ -44,9 +47,11 @@ const ProductosNuevos = (props) => {
             "precio": "$13,999.00",
         },
     ];
+
+    //setCantidad(1);
     return (
             <div className="productosNuevos">
-                {productos.map(producto => <Producto class='productoNuevo' img={producto.img} titulo={producto.titulo} precio={producto.precio} />)}
+                {productos.map((producto, index) => <Producto key={index} class='productoNuevo' img={producto.img} titulo={producto.titulo} precio={producto.precio} />)}
             </div>
             );
 }

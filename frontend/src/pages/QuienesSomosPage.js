@@ -9,7 +9,7 @@ const QuienesSomosPage = (props) => {
                 <Espacio height='10px'/>
                 <div className="row">
                     <div className="col-md-5">
-                        <img src="img/quienesSomosRuta.jpg" width="100%" height="100%"/>
+                        <img src="img/quienesSomosRuta.jpg" width="100%" height="100%" alt="Quienes Somos"/>
                     </div>
                     <div className="col-md-7">
                         <h2 className="quienesSomos">Somos Ruta Hogar</h2>

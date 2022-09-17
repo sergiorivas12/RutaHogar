@@ -10,7 +10,7 @@ const Sociales = (props) => {
                 </div>
                 <div className="social">
                     <h2>Data Fiscal</h2>
-                    <img src="img/QR.jpg"/>
+                    <img src="img/QR.jpg" alt="QR"/>
                 </div>
                 <div className="social">
                     <h2>Ruta Hogar</h2>
