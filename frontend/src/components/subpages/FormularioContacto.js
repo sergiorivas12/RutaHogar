@@ -43,7 +43,7 @@ const FormularioContacto = (props) => {
                             <div className="col-md-12">
                                 <div className="form-group">
                                     <label htmlFor="asunto">Mensaje</label>
-                                    <textarea style={textAreaStyle} className='form-control' id="mensaje" placeholder="mensaje"></textarea>
+                                    <textarea style={textAreaStyle} className="form-control" id="mensaje" placeholder="mensaje"></textarea>
                                 </div>
                             </div>
                         </div>

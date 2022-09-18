@@ -35,7 +35,7 @@ const ProductosIndex = (props) => {
         },
     ];
     return (
-            <div className="productos">
+            <div className="productosIndex">
                 {productos.map((producto, index) => <Producto key={index} img={producto.img} titulo={producto.titulo} precio={producto.precio} />)}
             </div>
             );

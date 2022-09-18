@@ -57,7 +57,6 @@ footer {
 .holder{
     max-width: 80%;
     margin:0 auto;
-
 }
 
 .cajas{
@@ -72,12 +71,13 @@ footer {
     color: #8b93a1;
 }
 
-.productos {
+.productosIndex {
     border-radius: 5px;
     background-color: white;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: row;
 }
 
 .producto{
@@ -117,6 +117,12 @@ footer {
     text-decoration: underline;
     font-size: 1em;
     color: #3c424d;
+}
+
+.productosSocial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .social ul {
@@ -214,6 +220,15 @@ footer {
     flex-direction: row;
 }
 
+.productosIndex{
+    width: 100%;
+}
+
+.productosIndex h2{
+    margin-left: 30px;
+    text-align: left;
+}
+
 .nuevos{
     width: 80%;
 }
@@ -267,4 +282,112 @@ footer {
 
 .nuevosFaq p{
     overflow-wrap: break-word;
+}
+
+.productosContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.productosGrid{
+    background-image: url('../img/icon-gird.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    width: 18px;
+    height: 18px;
+}
+
+.productosGrid:hover{
+    background-image: url('../img/icon-gird.png');
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: right center;
+    width: 18px;
+    height: 18px;
+}
+
+.productosList{
+    background-image: url('../img/icon-list.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    width: 18px;
+    height: 18px;
+}
+
+.productosList:hover{
+    background-image: url('../img/icon-list.png');
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: right center;
+    width: 18px;
+    height: 18px;
+}
+
+.filtrosColor ol{
+    list-style: none;
+}
+
+.productos{
+    display: flex;
+}
+
+.grid{
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.grid div{
+    width: 30%;
+}
+
+.grid div img{
+    width: 80%;
+}
+
+.grid .datosProducto{
+    width: unset!important;
+}
+
+.grid .datosProducto .caracteristicas{
+    display: none;
+}
+
+.list{
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.list div{
+    width: 100%;
+}
+
+.list div img{
+    width: 40%;
+}
+
+.list .producto{
+    display: flex;
+    text-align: unset !important;
+}
+
+.list .datosProducto{
+    width: unset!important;
+}
+
+.list .datosProducto  p{
+    margin-left: 5px;
+    font-size: 25px!important;
+    color: #4c5462!important;
+}
+
+.list .datosProducto .precio{
+    margin-left: 5px;
+    font-size: 15px!important;
+    color: #4c5462!important;
+}
+
+.list .datosProducto .caracteristicas{
+    margin-left: 5px;
+    font-size: 15px!important;
+    color: #4c5462!important;
 }
