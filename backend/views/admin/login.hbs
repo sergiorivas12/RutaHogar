@@ -1,3 +1,25 @@
-<h1>
-Prox. Login
-</h1>
+{{#if conocido}}
+    <h2>Hola {{nombre}} <a href="login/salir">Salir</a></h2>
+{{/if}}
+{{#unless conocido}}
+<form action="login/ingresar" method="post">
+<h2>Debes Loguearte para ingresar</h2>
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input type="text" name="user" id="user" class="form-control" />
+    <label class="form-label" for="user">User</label>
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+    <input type="password" name="password" id="password" class="form-control" />
+    <label class="form-label" for="password">Password</label>
+  </div>
+
+  <!-- 2 column grid layout for inline styling -->
+
+  <!-- Submit button -->
+  <button class="btn btn-primary btn-block mb-4">Sign in</button>
+
+</form>
+{{/unless}}
