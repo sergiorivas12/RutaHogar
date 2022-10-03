@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+var autenticator = require('./tools/autenticator');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -27,8 +28,8 @@ app.use(session({
     saveUninitialized   : true
 }));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', autenticator.auth, indexRouter);
+app.use('/users', autenticator.auth, usersRouter);
 app.use('/admin/login', loginRouter);
 
 // catch 404 and forward to error handler
