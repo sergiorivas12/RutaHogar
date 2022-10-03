@@ -28,7 +28,7 @@ app.use(session({
     saveUninitialized   : true
 }));
 
-app.use('/', autenticator.auth, indexRouter);
+app.use('/', indexRouter);
 app.use('/users', autenticator.auth, usersRouter);
 app.use('/admin/login', loginRouter);
 
