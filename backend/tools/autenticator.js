@@ -3,6 +3,6 @@ module.exports = {
         if (req.session && req.session.user !== undefined)
             return next();
         else
-            return res.redirect('/');
+            return res.redirect('/admin/login');
     }
 };
