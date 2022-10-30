@@ -6,6 +6,9 @@ var logger = require('morgan');
 var session = require('express-session');
 var autenticator = require('./tools/autenticator');
 
+require('dotenv').config();
+var pool = require('./models/bd');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
@@ -31,6 +34,10 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/users', autenticator.auth, usersRouter);
 app.use('/admin/login', loginRouter);
+
+pool.query("select * from empleados").then(function(resultados){
+    console.log(resultados);
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
