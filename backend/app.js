@@ -12,6 +12,7 @@ var pool = require('./models/bd');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
+var adminRouter = require('./routes/admin/novedades');
 
 var app = express();
 
@@ -32,10 +33,11 @@ app.use(session({
 }));
 
 app.use('/', indexRouter);
-app.use('/users', autenticator.auth, usersRouter);
+app.use('/users', autenticator.auth, autenticator.perfil, usersRouter);
 app.use('/admin/login', loginRouter);
+app.use('/admin/novedades', autenticator.auth, adminRouter);
 
-pool.query("select * from empleados").then(function(resultados){
+pool.query("select * from usuario").then(function(resultados){
     console.log(resultados);
 });
 

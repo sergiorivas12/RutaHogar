@@ -1,8 +1,4 @@
-{{#if conocido}}
-    <h2>Hola {{nombre}} <a href="login/salir">Salir</a></h2>
-{{/if}}
-{{#unless conocido}}
-<form action="login/ingresar" method="post">
+<form action="login" method="post">
 <h2>Debes Loguearte para ingresar</h2>
   <!-- Email input -->
   <div class="form-outline mb-4">
@@ -22,4 +18,6 @@
   <button class="btn btn-primary btn-block mb-4">Sign in</button>
 
 </form>
-{{/unless}}
+{{#if error}}
+<p>Usuario y/o contraseña incorrectos</p>
+{{/if}}
