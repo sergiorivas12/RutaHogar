@@ -1,0 +1,37 @@
+<div class="container" align="center">
+    <div class="row">
+        <div class="col-8">
+            <h2 style="text-align:left">Listado de Productos</h2>
+        </div>
+        <div class="col-4 text-end">
+            <a class="btn btn-success" href="productos/agregar"><i class="fa fa-plus"></i> Nuevo</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th class="text-end">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each productos}}
+                    <tr>
+                        <th scope="row">{{id}}</th>
+                        <td>{{nombre}}</td>
+                        <td class="number-align">{{precio}}</td>
+                        <td class="text-center">
+                            <a class="btn btn-sm btn-secondary" title="Editar" href="#"><i class="fa fa-pencil"></i></a>
+                            <a class="btn btn-sm btn-secondary" title="Eliminar" href="#"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -12,10 +12,24 @@
   <body>
         <header>
             <div className="holder">
-                <img src="../images/logo2_small_tr_sm.png" alt="Ruta Hogar"/>
+                <img src="/images/logo2_small_tr_sm.png" alt="Ruta Hogar"/>
             </div>
         </header>
-        <main>
+        <nav>
+            {{#if usuario}}
+            <div class="row">
+                <div class="col-md-10 navUserMenu">
+                <a class="btn btn-primary" href="/admin/productos">Productos
+                <i class="fa-solid fa-chair"></i></a>
+                </div>
+                <div class="col-md-2 navUserLogin">
+                <a class="btn btn-danger" href="/admin/login/logout">Cerrar Sesion
+                <i class="fas fa-sign-out-alt"></i></a>
+                </div>
+            </div>
+            {{/if}}
+        </nav>
+        <main id="main">
             {{{body}}}
         </main>
         <footer>

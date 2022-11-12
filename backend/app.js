@@ -12,7 +12,8 @@ var pool = require('./models/bd');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
-var adminRouter = require('./routes/admin/novedades');
+var bienvenidoRouter = require('./routes/admin/bienvenido');
+var productosRouter = require('./routes/admin/productos');
 
 var app = express();
 
@@ -35,11 +36,12 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/users', autenticator.auth, autenticator.perfil, usersRouter);
 app.use('/admin/login', loginRouter);
-app.use('/admin/novedades', autenticator.auth, adminRouter);
+app.use('/admin/bienvenido', autenticator.auth, bienvenidoRouter);
+app.use('/admin/productos', autenticator.auth, productosRouter);
 
-pool.query("select * from usuario").then(function(resultados){
+/*pool.query("select * from usuario").then(function(resultados){
     console.log(resultados);
-});
+});*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
