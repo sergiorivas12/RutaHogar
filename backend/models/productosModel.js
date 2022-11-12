@@ -11,6 +11,18 @@ async function getProductos() {
     }
 }
 
+async function getProducto(id) {
+    try {
+        var query = 'select * from producto where id = ?';
+        var rows = await pool.query(query, [id]);
+        console.log(rows);
+        return rows[0];
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
+
 async function insertarProducto(obj) {
     try {
         var query = 'insert into producto set ?';
@@ -22,4 +34,26 @@ async function insertarProducto(obj) {
     }
 }
 
-module.exports = {getProductos, insertarProducto}
+async function deleteProducto(id) {
+    try {
+        var query = 'delete from producto where id = ?';
+        var rows = await pool.query(query, [id]);
+        return rows;
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
+
+async function updateProducto(obj, id) {
+    try {
+        var query = 'update producto set ? where id = ?';
+        var rows = await pool.query(query, [obj, id]);
+        return rows;
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
+
+module.exports = {getProductos, getProducto, insertarProducto, deleteProducto, updateProducto}
