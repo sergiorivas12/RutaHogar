@@ -8,13 +8,10 @@ router.get('/productos', async function (req, res, next) {
     let productos = await productosModel.getProductos();
     productos = productos.map(producto => {
         if (producto.img_id) {
-            const imagen = cloudinary.image(producto.img_id, {
-                width: 100,
-                height: 100,
-                crop: 'fill',
-            });
+            const imagen = cloudinary.url(producto.img_id, {});
             return {
                 ...producto,
+                caracteristicas : producto.descripcion.split(","),
                 imagen
             }
         } else {
@@ -24,6 +21,7 @@ router.get('/productos', async function (req, res, next) {
             }
         }
     });
+    console.log(productos);
     res.json(productos);
 });
 
