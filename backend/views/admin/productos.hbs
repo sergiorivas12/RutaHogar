@@ -15,6 +15,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Precio</th>
+                        <th scope="col">Imagen</th>
                         <th class="text-end">Acciones</th>
                     </tr>
                 </thead>
@@ -24,6 +25,7 @@
                         <th scope="row">{{id}}</th>
                         <td>{{nombre}}</td>
                         <td class="number-align">{{precio}}</td>
+                        <td>{{{imagen}}}</td>
                         <td class="text-center">
                             <a class="btn btn-sm btn-secondary" title="Editar" href="productos/modificar/{{id}}"><i class="fa fa-pencil"></i></a>
                             <a class="btn btn-sm btn-secondary" title="Eliminar" href="productos/eliminar/{{id}}"><i class="fa fa-trash"></i></a>

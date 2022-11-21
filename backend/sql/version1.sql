@@ -5,6 +5,7 @@ CREATE TABLE `producto`  (
   `precio` dec(19, 4) NOT NULL,
   `descripcion` varchar(999) NULL,
   `nuevo` binary NULL,
+  `img_id` varchar(250) NULL,
   PRIMARY KEY (`id`)
 );
 

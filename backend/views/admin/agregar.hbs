@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div style="height:10px"></div>
-            <form action="/admin/productos/agregar" method="POST">
+            <form action="/admin/productos/agregar" method="POST" enctype="multipart/form-data">
                 <div class="mb-3 row">
                     <input type="text" class="form-control" placeHolder="Nombre" name="nombre">
                 </div>
@@ -19,6 +19,11 @@
                 </div>
                 <div class="mb-3 row">
                     <textarea type="text" class="form-control" placeHolder="Descripcion" name="descripcion"></textarea>
+                </div>
+                <div class="mb-3 row">
+                    <div class="form-group">
+                        <label>Imagen :<input type="file" id="img_id" name="img_id"/></label>
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form>

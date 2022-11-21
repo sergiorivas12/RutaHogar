@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 var autenticator = require('./tools/autenticator');
+var fileUpload = require('express-fileupload');
+var cors = require('cors');
 
 require('dotenv').config();
 var pool = require('./models/bd');
@@ -14,6 +16,7 @@ var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
 var bienvenidoRouter = require('./routes/admin/bienvenido');
 var productosRouter = require('./routes/admin/productos');
+var apiRouter = require('./routes/api');
 
 var app = express();
 
@@ -33,11 +36,17 @@ app.use(session({
     saveUninitialized   : true
 }));
 
+app.use(fileUpload({
+    useTempFiles    : true,
+    tempFileDir     : '/tmp/',
+}));
+
 app.use('/', indexRouter);
 app.use('/users', autenticator.auth, autenticator.perfil, usersRouter);
 app.use('/admin/login', loginRouter);
 app.use('/admin/bienvenido', autenticator.auth, bienvenidoRouter);
 app.use('/admin/productos', autenticator.auth, productosRouter);
+app.use('/api', cors(), apiRouter);
 
 /*pool.query("select * from usuario").then(function(resultados){
     console.log(resultados);

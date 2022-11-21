@@ -4,6 +4,7 @@ async function getProductos() {
     try {
         var query = 'select * from producto';
         var rows = await pool.query(query);
+        console.log(rows);
         return rows;
     } catch (error) {
         console.error(error);
@@ -23,10 +24,10 @@ async function getProducto(id) {
     }
 }
 
-async function insertarProducto(obj) {
+async function insertarProducto(obj,img_id) {
     try {
-        var query = 'insert into producto set ?';
-        var rows = await pool.query(query, [obj]);
+        var query = 'insert into producto set ?,img_id = ?';
+        var rows = await pool.query(query, [obj,img_id]);
         return rows;
     } catch (error) {
         console.error(error);
