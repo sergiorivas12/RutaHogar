@@ -10,7 +10,7 @@ const Producto = (props) => {
                 <img src={props.img} alt={props.titulo} className={props.classImg}/>
                 <div className="datosProducto">
                     <p>{props.titulo}</p>
-                    <p className="precio">{props.precio}</p>
+                    <p className="precio">${props.precio}</p>
                     {'caracteristicas' in props && props.caracteristicas !== undefined ? props.caracteristicas.map(c => <p className="caracteristicas">{c}</p>) : null}
                 </div>
             </div>

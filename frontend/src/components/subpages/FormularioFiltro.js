@@ -4,7 +4,7 @@ import ListaCheckBoxColores from '../subpages/ListaCheckBoxColores';
 
 const FormularioFiltro = (props) => {
     return (
-            <form>
+            <form onChange={props.change}>
                 <div className="row">
                     <div className="col-md-12">
                         <h5>Filtrar por Precio</h5>
@@ -12,9 +12,9 @@ const FormularioFiltro = (props) => {
                 </div>
                 <div className="row">
                     <div className="col-md-12">
-                        <input className="form-control" id="minimo" placeholder="Precio Minimo" />
+                        <input type="text" className="form-control" id="minimo" name="minimo" placeholder="Precio Minimo" />
                         <Espacio height='5px'/>
-                        <input type="texto" className="form-control" id="email" placeholder="Precio Maximo" />
+                        <input type="text" className="form-control" id="maximo" name="maximo" placeholder="Precio Maximo"/>
                     </div>
                 </div>
                 <Espacio height='10px'/>

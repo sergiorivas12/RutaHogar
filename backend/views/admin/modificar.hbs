@@ -12,6 +12,14 @@
             <div style="height:10px"></div>
             <form action="/admin/productos/modificar" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="{{producto.id}}">
+                <div class="mb-3 row" align="left">
+                    <div class="form-group">
+                        <p>
+                            <label><input type="checkbox" id="sn_nuevo" name="sn_nuevo" value="1" {{#if producto.sn_nuevo}}checked{{/if}} />Nuevo Producto</label>
+                            <label><input type="checkbox" id="sn_home" name="sn_home" value="1" {{#if producto.sn_home}}checked{{/if}}/>Home</label>
+                        </p>
+                    </div>
+                </div>
                 <div class="mb-3 row">
                     <input type="text" class="form-control" placeHolder="Nombre" name="nombre" value="{{producto.nombre}}">
                 </div>
@@ -32,6 +40,7 @@
                         </p>
                     </div>
                 </div>
+
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form>
             {{#if error}}

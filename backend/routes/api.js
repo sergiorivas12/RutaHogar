@@ -6,7 +6,8 @@ var nodemailer = require('nodemailer');
 
 /* GET home page. */
 router.get('/productos', async function (req, res, next) {
-    let productos = await productosModel.getProductos();
+    console.log(req.query);
+    let productos = await productosModel.getProductos(req.query);
     productos = productos.map(producto => {
         if (producto.img_id) {
             const imagen = cloudinary.url(producto.img_id, {});

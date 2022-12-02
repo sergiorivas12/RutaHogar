@@ -102,6 +102,8 @@ router.post('/modificar', async (req, res, next) => {
             imagen = req.files.img_id;
             img_id = (await uploader(imagen.tempFilePath)).public_id;
             borrar_img_vieja = true;
+        } else {
+            img_id = req.body.img_original;
         }
 
         if (borrar_img_vieja && req.body.img_original) {
@@ -111,6 +113,8 @@ router.post('/modificar', async (req, res, next) => {
             nombre: req.body.nombre,
             precio: req.body.precio,
             descripcion: req.body.descripcion,
+            sn_nuevo: (req.body.sn_nuevo ? req.body.sn_nuevo : 0),
+            sn_home: (req.body.sn_home ? req.body.sn_home : 0),
             img_id
         }
         await productosModel.updateProducto(obj, req.body.id);

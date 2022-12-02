@@ -11,6 +11,14 @@
             </div>
             <div style="height:10px"></div>
             <form action="/admin/productos/agregar" method="POST" enctype="multipart/form-data">
+                <div class="mb-3 row" align="left">
+                    <div class="form-group">
+                        <p>
+                            <label><input type="checkbox" id="sn_nuevo" name="sn_nuevo" value="1"/>Nuevo Producto</label>
+                            <label><input type="checkbox" id="sn_home" name="sn_home" value="1"/>Home</label>
+                        </p>
+                    </div>
+                </div>
                 <div class="mb-3 row">
                     <input type="text" class="form-control" placeHolder="Nombre" name="nombre">
                 </div>
