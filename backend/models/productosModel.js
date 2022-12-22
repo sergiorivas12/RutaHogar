@@ -2,19 +2,23 @@ var pool = require('./bd');
 
 async function getProductos(params) {
     try {
+        console.log(params);
         var query = 'select * from producto';
         if (params !== undefined && Object.keys(params).length !== 0) {
             var queryPrecios = '';
-            if (Object.keys(params).includes('minimo')) {
+            if (Object.keys(params).includes('minimo') && (params['minimo'] !== undefined && params['maximo'] !== '') ) {
                 var minimo = ' and precio >=' + params['minimo'];
                 queryPrecios += minimo;
-                delete params['minimo'];
             }
-            if (Object.keys(params).includes('maximo')) {
+            delete params['minimo'];
+            if (Object.keys(params).includes('maximo') && (params['maximo'] !== undefined && params['maximo'] !== '') ) {
                 var maximo = ' and precio <=' + params['maximo'];
                 queryPrecios += maximo;
-                delete params['maximo'];
             }
+            delete params['maximo'];
+            if (Object.keys(params).includes('color') && (params['color'] !== undefined && params['color'] !== '') ) {
+            }
+            delete params['color'];
             if (Object.keys(params).length == 0) {
                 query += " where 1=1";
             } else {
@@ -22,6 +26,7 @@ async function getProductos(params) {
             }
             query += queryPrecios;
         }
+        console.log(query);
         var rows = await pool.query(query, [params]);
         console.log(rows);
         return rows;

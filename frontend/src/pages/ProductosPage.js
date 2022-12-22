@@ -22,13 +22,26 @@ const ProductosPage = (props) => {
         element.classList.add("list");
     };
 
+    const initialForm = {
+        minimo: '',
+        maximo: '',
+        color: []
+    }
+
     const [loading, setLoading] = useState(false);
     const [productos, setProductos] = useState([]);
-    const cargarProductos = async (name,value) => {
+    const [formData, setFormData] = useState(initialForm);
+
+    const cargarProductos = async (formData) => {
         setLoading(true);
         var url = 'http://localhost:3000/api/productos';
-        if(name != undefined && value != undefined){
-            url += '?'+name+"="+value;
+        if(formData != undefined){
+            url += '?';
+        }
+        for(var form in formData){
+            if (form != undefined && formData[form] != undefined) {
+                url += form + "=" + encodeURIComponent(formData[form]) + "&";
+            }
         }
         const response = await axios.get(url);
         setProductos(response.data);
@@ -37,7 +50,21 @@ const ProductosPage = (props) => {
 
     const handleChange = e => {
         const {name, value} = e.target;
-        cargarProductos(name,value);
+        if (e.target.type == 'checkbox')
+        {
+            if (e.target.checked) {
+                formData[name].push(value);
+            } else {
+                const index = formData[name].indexOf(value);
+                const x = formData[name].splice(index, 1);
+            }
+        } else {
+            setFormData(oldData => ({
+                    ...oldData,
+                    [name]: value
+                }));
+        }
+        cargarProductos(formData);
     };
 
     return (
